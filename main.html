@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Document</title>
+
+    <style>
+
+
+     
+
+    
+       
+        #logo1 {
+            color: #606f8c;
+        }
+
+        #logo2 {
+            margin-left: 5px;
+            color: #606f8c;
+        }
+
+        #logo3 {
+            margin-left: 35px;
+            color: #606f8c;
+            font-size: 10px;
+            
+        }
+        #map {
+                width: 100%;
+                height: 350px;
+                margin-top: 40px;
+              
+        }
+
+
+        #pesquisa {
+            display: flex;
+            margin-left: 180px;
+        }
+
+
+
+        .input {
+            margin-left: 200px;
+        }
+        #main {
+            display: flex;
+        }
+        #paises {
+            margin-top: 10px;
+        }
+
+        #txtcasesfbp {
+            color:black;
+            font-size: 12px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #todaycasesfbp{
+            color:red;
+            font-size: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #totalcasesfbp {
+            color:black;
+            font-size: 12px ;
+        }
+
+        
+        #txtcasessbp {
+            color:black;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #todaycasessbp{
+            color:green;
+            font-size: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #totalcasessbp {
+            color:black;
+            font-size: 12px ;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+
+        #txtcasestbp {
+            color:black;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif, 16px;
+  
+        }
+
+        #todaycasestbp{
+            color:red;
+            font-size: 15px;
+      
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #totalcasestbp {
+            color:black;
+            font-size: 12px ;
+      
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #mundo {
+            margin-top: 10px;
+            margin-left: 150px;
+            
+        }
+        #txtcasesfb {
+            color:black;
+            font-size: 12px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #todaycasesfb{
+            color:red;
+            font-size: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #totalcasesfb {
+            color:black;
+            font-size: 12px ;
+        }
+
+        
+        #txtcasessb {
+            color:black;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #todaycasessb{
+            color:green;
+            font-size: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #totalcasessb {
+            color:black;
+            font-size: 12px ;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+
+        #txtcasestb {
+            color:black;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif, 16px;
+  
+        }
+
+        #todaycasestb{
+            color:red;
+            font-size: 15px;
+      
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #totalcasestb {
+            color:black;
+            font-size: 12px ;
+      
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+       
+
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <b>
+            <div id="logo1">ELTON SAMPAIO</div>
+            <div id="logo2">TECNOLOGIAS</div>
+            <div id="logo3">DESDE 2020</div>
+        </b>
+
+       
+
+    </div>
+
+    <div id="pesquisa">
+        <form>
+            <input id="input">
+        </form>
+        <button id="btn">ok</button>
+    </div>
+  
+    <div id="map"></div>
+    
+    
+    <div id="main">
+      
+        <div id="paises">
+
+            <div id="p">País</div>
+            <br>
+            <div>
+                <div id="txtcasessbp">casos</div>
+                <b id="todaycasesfbp"></b>
+                <div id="totalcasesfbp"></div>
+            </div> 
+            <br>
+            
+            <div>
+                <div id="txtcasessbp">Recuperados</div>
+                <b id="todaycasessbp"></b>
+                <div id="totalcasessbp"></div>
+            </div>  
+            
+            <br>
+            <div>
+                <div id="txtcasestbp">Mortes</div>
+                <b id="todaycasestbp"></b>
+                <div id="totalcasestbp"></div>
+            </div>
+        </div>
+
+        <div id="mundo">
+            <div>Mundo</div>
+            <br>
+            <div>
+                <div id="txtcasesfb">Casos</div>
+                <b id="todaycasesfb"></b>
+                <div id="totalcasesfb"></div>
+            </div> 
+            <br>
+            
+            <div>
+                <div id="txtcasessb">Recuperados</div>
+                <b id="todaycasessb"></b>
+                <div id="totalcasessb"></div>
+            </div>  
+            
+            <br>
+            <div>
+                <div id="txtcasestb">Mortes</div>
+                <b id="todaycasestb"></b>
+                <div id="totalcasestb"></div>
+            </div>
+        </div>
+
+
+        </div>
+
+        
+    </div>
+
+     
+
+    </div>
+    
+
+
+    <script>
+        var map = L.map('map').setView([0, 0], 3);
+            L.tileLayer('https://api.maptiler.com/maps/voyager/{z}/{x}/{y}.png?key=IFcDaEiSMLc0R0jYum2L',{
+                tileSize: 512,
+                zoomOffset: -1,
+                minZoom: 1,
+                attribution: "\u003ca href=\"https://carto.com/\" target=\"_blank\"\u003e\u0026copy; CARTO\u003c/a\u003e \u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+                crossOrigin: true
+            }).addTo(map);
+
+
+
+
+
+
+            const allurl2 = "https://disease.sh/v3/covid-19/countries";
+            fetch(allurl2)
+            .then((resp) => resp.json())
+            .then(function(data) {
+                return data.map(function(info){
+
+
+                    var r = Math.sqrt(info.cases) * 200;
+                    var circle = L.circle([info.countryInfo.lat, info.countryInfo.long], 
+                    {
+                        radius: r
+                    }).addTo(map);
+          
+                    circle.bindPopup("País : "+info.country+ "."+
+                    " <br> Casos Totais : </b>" + info.cases+
+                    "<br>Recuperados : </b>" + info.recovered+
+                    "<br>Mortes : </b>" + info.deaths
+                    );
+
+                    circle.on('click', onClick);    
+                    
+                });
+                
+            })
+            .catch(function(error){
+                console.log(error)
+            });
+
+
+
+
+            const allurl = "https://disease.sh/v3/covid-19/all";
+            fetch(allurl)
+            .then((resp) => resp.json())
+            .then(function(data) {
+                document.getElementById('todaycasesfb').innerHTML = "+"+data.todayCases;
+                document.getElementById('totalcasesfb').innerHTML = data.cases + " Total";
+
+                document.getElementById('todaycasessb').innerHTML = "+"+data.todayRecovered;
+                document.getElementById('totalcasessb').innerHTML = data.recovered + " Total";
+
+                document.getElementById('todaycasestb').innerHTML = "+"+data.todayDeaths;
+                document.getElementById('totalcasestb').innerHTML = data.deaths + " Total";
+            })
+            .catch(function(error){
+                console.log(error)
+            });
+
+
+
+            function onClick(e){
+                var popup = e.target.getPopup();
+                var content = popup.getContent();
+               
+                var aux = [];
+                for(var i = 0; i < content.length;i ++){
+                    if(content[i] =='.'){
+                        aux.push(i);
+                    }
+                }
+
+     
+                
+                var s = String(content)
+                s = s.substring(aux[0],6);
+    
+            fetch("https://disease.sh/v3/covid-19/countries/"+s+"?strict=true")
+            .then((resp) => resp.json())
+            .then(function(info) {
+
+
+                    document.getElementById('p').innerHTML = info.country;
+                    document.getElementById('todaycasesfbp').innerHTML = "+"+info.todayCases;
+                    document.getElementById('totalcasesfbp').innerHTML = info.cases + " Total";
+
+                    document.getElementById('todaycasessbp').innerHTML = "+"+info.todayRecovered;
+                    document.getElementById('totalcasessbp').innerHTML = info.recovered + " Total";
+
+                    document.getElementById('todaycasestbp').innerHTML = "+"+info.todayDeaths;
+                    document.getElementById('totalcasestbp').innerHTML = info.deaths + " Total";
+                    const node = document.getElementById("input");
+            })
+            .catch(function(error){
+                console.log(error)
+            }); }
+
+
+
+            document.getElementById('btn').addEventListener('click', SpecificCountry);
+            function SpecificCountry(){
+
+               var s2 = document.getElementById('input').value;
+    
+                fetch("https://disease.sh/v3/covid-19/countries/"+s2+"?strict=true")
+                .then((resp) => resp.json())
+                .then(function(info) {
+
+                        document.getElementById('p').innerHTML = info.country;
+                        document.getElementById('todaycasesfbp').innerHTML = "+"+info.todayCases;
+                        document.getElementById('totalcasesfbp').innerHTML = info.cases + " Total";
+
+                        document.getElementById('todaycasessbp').innerHTML = "+"+info.todayRecovered;
+                        document.getElementById('totalcasessbp').innerHTML = info.recovered + " Total";
+
+                        document.getElementById('todaycasestbp').innerHTML = "+"+info.todayDeaths;
+                        document.getElementById('totalcasestbp').innerHTML = info.deaths + " Total";
+                        map.setView([info.countryInfo.lat,  info.countryInfo.long], 4);
+                })
+                .catch(function(error){
+                    console.log(error)
+                }); }
+
+                //prevent enter click
+                $(document).ready(function() {
+                $(window).keydown(function(event){
+                    if(event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                    }
+                });
+                });
+
+            
+
+        
+    </script>
+</body>
+
+
+</html>
